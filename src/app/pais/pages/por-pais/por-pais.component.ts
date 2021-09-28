@@ -10,6 +10,7 @@ import { PaisService } from '../../services/pais.service';
 export class PorPaisComponent implements OnInit {
 
   termino: string = 'Hola Mundo';
+  hayError: boolean = false;
 
   constructor(private paisService: PaisService) { }
 
@@ -17,8 +18,12 @@ export class PorPaisComponent implements OnInit {
   }
 
   buscar(): void {
+    this.hayError = false;
     this.paisService.buscarPais(this.termino).subscribe((response: any) => {
       console.log(response);
+    }, (error: any) => {
+      console.log(error);
+      this.hayError = true;
     });
   }
 
