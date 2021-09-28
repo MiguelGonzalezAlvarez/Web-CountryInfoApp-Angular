@@ -10,7 +10,7 @@ import { PaisService } from '../../services/pais.service';
 })
 export class PorPaisComponent implements OnInit {
 
-  termino: string = 'Hola Mundo';
+  termino: string = '';
   hayError: boolean = false;
   paises: Pais[] = [];
 
@@ -19,9 +19,11 @@ export class PorPaisComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  buscar(): void {
+  buscar(termino: string): void {
     this.hayError = false;
-    this.paisService.buscarPais(this.termino).subscribe((response) => {
+    this.termino = termino;
+    
+    this.paisService.buscarPais(termino).subscribe((response) => {
       // La respuesta que nos den rellena la tabla que mostramos
       console.log(response);
       this.paises = response;
