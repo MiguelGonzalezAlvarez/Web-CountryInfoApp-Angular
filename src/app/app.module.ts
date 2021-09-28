@@ -1,11 +1,13 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { AppComponent } from './app.component';
+import { HttpClientModule } from '@angular/common/http';
 
 import { AppRoutingModule } from './app-routing.module';
 
-import { PaisModule } from './pais/pais.module';
+import { AppComponent } from './app.component';
 import { SharedModule } from './shared/shared.module';
+import { PaisModule } from './pais/pais.module';
+
 
 
 @NgModule({
@@ -14,9 +16,10 @@ import { SharedModule } from './shared/shared.module';
   ],
   imports: [
     BrowserModule,
+    HttpClientModule,
     AppRoutingModule,
-    PaisModule,
-    SharedModule
+    SharedModule,
+    PaisModule
   ],
   providers: [],
   bootstrap: [AppComponent]
