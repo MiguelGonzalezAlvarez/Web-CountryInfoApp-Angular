@@ -25,7 +25,6 @@ export class PorPaisComponent implements OnInit {
     
     this.paisService.buscarPais(termino).subscribe((response) => {
       // La respuesta que nos den rellena la tabla que mostramos
-      console.log(response);
       this.paises = response;
     }, () => {
       // Si se produce un error se pone vacia la tabla de paises

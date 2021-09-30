@@ -1,20 +1,20 @@
-<table class="table table-hover">
+<table class="table table-hover" aria-describedby="">
     <thead>
         <tr>
             <th id="numeracion">#</th>
             <th id="bandera">Bandera</th>
             <th id="nombre">Nombre</th>
-            <th id="area">Area</th>
+            <th id="poblacion">Población</th>
             <th id="enlace"></th>
         </tr>
     </thead>
     <tbody>
         <tr *ngFor="let pais of paises; let i = index">
             <td>{{ i + 1 }}</td>
-            <td><img class="small-flag" alt="Unknow Source" [src]="pais.flags[0]"></td>
-            <td>{{ pais.name.common }}</td>
-            <td>{{ pais.area }}</td>
-            <td><a [routerLink]="['/pais',pais.cca2]">Ver...</a></td>
+            <td><img class="small-flag" alt="Unknow Source" [src]="pais.flag"></td>
+            <td>{{ pais.capital }}, {{ pais.name }}</td>
+            <td>{{ pais.population }}</td>
+            <td><a [routerLink]="['/pais',pais.alpha2Code]">Ver...</a></td>
         </tr>
     </tbody>
 </table>
