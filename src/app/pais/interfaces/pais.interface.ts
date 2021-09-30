@@ -6,7 +6,7 @@ export interface Pais {
     callingCodes: string[];
     capital: string;
     altSpellings: string[];
-    continente: string;
+    region: string;
     subcontinente: string;
     population: number;
     latlng: number[];

@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { Pais } from '../../interfaces/pais.interface';
 
 @Component({
@@ -7,12 +7,8 @@ import { Pais } from '../../interfaces/pais.interface';
   styles: [
   ]
 })
-export class PaisTablaComponent implements OnInit {
+export class PaisTablaComponent {
 
   @Input() paises: Pais[] = [];
-
-  constructor() { }
-
-  ngOnInit(): void { }
 
 }

@@ -19,8 +19,6 @@ export class PaisInputComponent implements OnInit {
 
   termino: string = '';
 
-  constructor() { }
-
   ngOnInit(): void {
     this.debouncer
     .pipe(debounceTime(300))

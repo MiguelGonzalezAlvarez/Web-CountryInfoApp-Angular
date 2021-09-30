@@ -8,16 +8,13 @@ import { PaisService } from '../../services/pais.service';
   styles: [
   ]
 })
-export class PorContinenteComponent implements OnInit {
+export class PorContinenteComponent {
 
   termino: string = '';
   hayError: boolean = false;
   paises: Pais[] = [];
 
   constructor(private paisService: PaisService) { }
-
-  ngOnInit(): void {
-  }
 
   buscar(termino: string): void {
     this.hayError = false;
