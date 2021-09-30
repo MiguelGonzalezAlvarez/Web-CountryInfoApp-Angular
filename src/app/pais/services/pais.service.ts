@@ -22,4 +22,9 @@ export class PaisService {
     return this.http.get<Pais[]>(url);
   }
 
+  buscarContinente(termino: string): Observable<Pais[]> {
+    const url = `${this.apiUrl}/continent/${termino}`;
+    return this.http.get<Pais[]>(url);
+  }
+
 }

@@ -1,9 +1,10 @@
-<h2>Por Pais</h2>
+<h2>Por Continente</h2>
 <hr>
 
 <div class="row">
     <div class="clo">
-        <app-pais-input placeholder="Buscar pais..." (buscarEvent)="buscar($event)" (onDebounce)="sugerencias($event)"></app-pais-input>
+        <app-pais-input placeholder="Buscar continente..." (buscarEvent)="buscar($event)"
+            (onDebounce)="sugerencias($event)"></app-pais-input>
     </div>
 </div>
 
@@ -17,3 +18,4 @@
         <app-pais-tabla [paises]="paises"></app-pais-tabla>
     </div>
 </div>
+

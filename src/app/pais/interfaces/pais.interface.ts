@@ -6,8 +6,8 @@ export interface Pais {
     callingCodes: string[];
     capital: string;
     altSpellings: string[];
-    region: string;
-    subregion: string;
+    continente: string;
+    subcontinente: string;
     population: number;
     latlng: number[];
     demonym: string;
@@ -21,7 +21,7 @@ export interface Pais {
     languages: Language[];
     translations: Translations;
     flag: string;
-    regionalBlocs: RegionalBloc[];
+    continentealBlocs: ContinentealBloc[];
     cioc: string;
 }
 
@@ -38,7 +38,7 @@ export interface Language {
     nativeName: string;
 }
 
-export interface RegionalBloc {
+export interface ContinentealBloc {
     acronym: string;
     name: string;
     otherAcronyms: any[];
