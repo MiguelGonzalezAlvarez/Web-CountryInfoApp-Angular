@@ -8,7 +8,7 @@
     <!-- Inicio de la primera fila -->
     <div class="row pl-2">
         <div class="col-12">
-            <h1>País: <small>{{ pais.name }}</small></h1>
+            <h1>País: <small>{{ pais.name.common }}</small></h1>
         </div>
     </div>
     <!-- Fin de la primera fila -->
@@ -16,7 +16,7 @@
     <div class="row pl-2">
         <div class="col-5">
             <h3>Bandera</h3>
-            <img [src]="pais.flag" alt='Unknown Source' class="img-thumbnail" />
+            <img [src]="pais.flags.png" alt='Unknown Source' class="img-thumbnail" />
         </div>
         <div class="col pl-2">
             <h3>Información</h3>
@@ -27,11 +27,11 @@
                 </li>
                 <li class="list-group-item">
                     <strong>Código numérico:</strong>
-                    {{ pais.numericCode }}
+                    {{ pais.ccn3 }}
                 </li>
                 <li class="list-group-item">
                     <strong>Código alpha:</strong>
-                    {{ pais.alpha3Code }}
+                    {{ pais.cca3 }}
                 </li>
             </ul>
         </div>
@@ -42,15 +42,8 @@
         <div class="col-12">
             <h3>Traducciones</h3>
             <div class="col">
-                <span class="badge bg-primary mr-1">{{ pais.translations.es }}</span>
-                <span class="badge bg-primary mr-1">{{ pais.translations.de }}</span>
-                <span class="badge bg-primary mr-1">{{ pais.translations.fr }}</span>
-                <span class="badge bg-primary mr-1">{{ pais.translations.ja }}</span>
-                <span class="badge bg-primary mr-1">{{ pais.translations.it }}</span>
-                <span class="badge bg-primary mr-1">{{ pais.translations.br }}</span>
-                <span class="badge bg-primary mr-1">{{ pais.translations.pt }}</span>
-                <span class="badge bg-primary mr-1">{{ pais.translations.hr }}</span>
-                <span class="badge bg-primary mr-1">{{ pais.translations.fa }}</span>
+                <span *ngFor="let translation of pais.translations | keyvalue" class="badge bg-primary mr-1">{{
+                    translation.value.common }}</span>
             </div>
         </div>
     </div>

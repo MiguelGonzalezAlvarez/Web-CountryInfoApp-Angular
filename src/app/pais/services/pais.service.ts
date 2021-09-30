@@ -8,7 +8,7 @@ import { Pais } from '../interfaces/pais.interface';
 })
 export class PaisService {
 
-  private apiUrl: string = 'https://restcountries.com/v2';
+  private apiUrl: string = 'https://restcountries.com/v3.1';
 
   constructor(private http: HttpClient) { }
 
@@ -23,7 +23,7 @@ export class PaisService {
   }
 
   buscarContinente(termino: string): Observable<Pais[]> {
-    const url = `${this.apiUrl}/continent/${termino}`;
+    const url = `${this.apiUrl}/region/${termino}`;
     return this.http.get<Pais[]>(url);
   }
 

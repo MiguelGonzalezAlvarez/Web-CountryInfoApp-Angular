@@ -25,7 +25,7 @@ export class VerPaisComponent implements OnInit {
     // Usamos el switchMap para evitar tener que usar dos subscribe ya que params es tambien un observable
     this.activatedRoute.params
       .pipe(switchMap(({ id }) => this.paisService.getPaisPorAlpha(id)), tap(console.log))
-      .subscribe(pais => this.pais = pais);
+      .subscribe(pais => [this.pais] = pais);
   }
 
 }
