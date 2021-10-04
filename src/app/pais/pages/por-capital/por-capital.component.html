@@ -3,13 +3,32 @@
 
 <div class="row">
     <div class="clo">
-        <app-pais-input placeholder="Buscar capital..." (buscarEvent)="buscar($event)" (onDebounce)="sugerencias($event)"></app-pais-input>
+        <app-pais-input placeholder="Buscar capital..." (buscarEvent)="buscar($event)"
+            (onDebounce)="sugerencias( $event )">
+        </app-pais-input>
     </div>
 </div>
+
+<ul class="list-group" *ngIf="mostrarSugerencias">
+    <li class="list-group-item list-group-item-action" *ngFor="let pais of paisesSugeridos">
+        <a class="nav-link" [routerLink]="['/pais',pais.cca2]">
+            {{ pais.capital }}
+        </a>
+    </li>
+    <li class="list-group-item list-group-item-action">
+        <a class="nav-link" (click)="buscar( termino )">
+            Buscar "{{ termino }}"
+        </a>
+    </li>
+</ul>
 
 <hr>
 <div *ngIf="hayError" class="alert alert-danger">
     No se encontró nada con el término {{ termino }}
+</div>
+
+<div *ngIf="terminoAlert" class="alert alert-danger">
+    No se puede buscar sin introducir un nombre
 </div>
 
 <div *ngIf="!hayError && this.paises.length" class="row">
