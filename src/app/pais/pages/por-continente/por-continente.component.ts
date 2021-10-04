@@ -38,10 +38,10 @@ export class PorContinenteComponent {
   }
 
   activarContinente(continente: string): void {
-    this.continenteActivo = continente;
     if (continente !== this.continenteActivo) {
       // Si el continente no cambia no es necesario llamar de nuevo a la api
       this.buscar(continente);
+      this.continenteActivo = continente;
     }
   }
 
