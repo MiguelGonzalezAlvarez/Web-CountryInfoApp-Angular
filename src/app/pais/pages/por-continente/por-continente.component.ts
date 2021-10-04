@@ -15,7 +15,7 @@ import { PaisService } from '../../services/pais.service';
 export class PorContinenteComponent {
 
   continentes: string[] = ['Africa', 'Americas', 'Asia', 'Europe', 'Oceania'];
-  continenteActivo: string = 'Africa';
+  continenteActivo: string = 'Sin Continente';
 
   termino: string = '';
   hayError: boolean = false;
