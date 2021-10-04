@@ -1,10 +1,14 @@
-<h2>Por Continente</h2>
+<h2>Por continente</h2>
+<h2><small>{{ continenteActivo | titlecase }}</small></h2>
 <hr>
 
+<h5>Seleccione el continente</h5>
 <div class="row">
-    <div class="clo">
-        <app-pais-input placeholder="Buscar continente..." (buscarEvent)="buscar($event)"
-            (onDebounce)="sugerencias($event)"></app-pais-input>
+    <div class="col">
+        <button [class]="getClaseCss(continente)" *ngFor="let continente of continentes"
+            (click)="activarContinente(continente)">
+            {{ continente | titlecase }}
+        </button>
     </div>
 </div>
 
@@ -14,8 +18,14 @@
 </div>
 
 <div *ngIf="!hayError && this.paises.length" class="row">
-    <div class="clo">
+    <div class="col">
         <app-pais-tabla [paises]="paises"></app-pais-tabla>
     </div>
 </div>
 
+
+<!-- Formas alternativas de hacer la asignacion de clase
+1. [class.btn-primary="continente === continenteActivo"]
+2. [ngClass]="{'btn-primary':continente === continenteActivo,'btn-outline-primary':continente !== continenteActivo }" 
+3. [class]="(continente === continenteActivo)?'btn-primary':'btn-outline-primary'"
+-->
